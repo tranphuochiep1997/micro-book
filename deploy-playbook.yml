@@ -2,7 +2,7 @@
   hosts: appinstances
   become: true
   vars:
-    SERVICE_NAME: eureka
+    SERVICE_NAME: book
     
   tasks: 
     - name: Update APT package manager repositories cache
@@ -34,4 +34,6 @@
         name: '{{SERVICE_NAME}}'
         state: restarted
         enabled: yes
+      environment:
+        EUREKA_URL: "http://34.134.120.3:8761/eureka"
       

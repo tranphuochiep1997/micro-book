@@ -1,8 +1,6 @@
-//properties([pipelineTriggers([githubPush()])])
-
 node {
     stage ('Checkout'){
-        git branch: 'main', url: 'https://github.com/tranphuochiep1997/micro-eureka.git'
+        git branch: 'main', url: 'https://github.com/tranphuochiep1997/micro-book.git'
     }
 
     stage ('Build'){
@@ -10,6 +8,6 @@ node {
     }
 	
     stage ('Deploy'){
-    	sh "ansible-playbook -i /etc/ansible/hosts deploy-playbook.yml -e 'JAR_FILE=${env.WORKSPACE}/target/eureka-0.0.1-SNAPSHOT.jar'"
+    	sh "ansible-playbook -i /etc/ansible/hosts deploy-playbook.yml -e 'JAR_FILE=${env.WORKSPACE}/target/book-0.0.1-SNAPSHOT.jar'"
     }
 }    

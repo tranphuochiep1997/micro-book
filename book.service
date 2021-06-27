@@ -1,11 +1,11 @@
 [Unit]
-Description=eureka
+Description=book
 After=syslog.target
 
 [Service]
 User=tranphuochiep1997
 Group=tranphuochiep1997
-ExecStart=/app/eureka/build/app.jar
+ExecStart=/app/book/build/app.jar
 SuccessExitStatus=143
 
 [Install]
