@@ -15,7 +15,13 @@
       apt: 
         name: ['openjdk-8-jdk']
         state: present
-       
+    - name: Ensure jar folder exist
+      file:
+        path: /app/{{SERVICE_NAME}}/build
+        owner: tranphuochiep1997
+        group: tranphuochiep1997
+        state: directory
+        
     - name: Copy jar file
       copy:
         src: '{{ JAR_FILE }}'
