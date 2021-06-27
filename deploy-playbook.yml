@@ -1,5 +1,5 @@
 - name: Deploy app
-  hosts: appinstances
+  hosts: app-single-instance
   become: true
   vars:
     SERVICE_NAME: book
