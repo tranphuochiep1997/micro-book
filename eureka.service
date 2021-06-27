@@ -1,0 +1,12 @@
+[Unit]
+Description=eureka
+After=syslog.target
+
+[Service]
+User=tranphuochiep1997
+Group=tranphuochiep1997
+ExecStart=/app/eureka/build/app.jar
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
